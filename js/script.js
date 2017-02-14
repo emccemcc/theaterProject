@@ -38,7 +38,7 @@ function(){
 });
 
 $('.seat').click('on', function(){
-    $(this).toggleClass('clicked'),
+    $(this).toggleClass('clicked')
 });
 
 //work on storage of seat
