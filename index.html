@@ -12,20 +12,25 @@
 <div class="container">
   <!-- Eric adding background video -->
 
- <div class="fullscreen-bg">
+  <div class="fullscreen-bg">
       <video loop muted autoplay class="fullscreen-bg__video">
           <source src="blueMotion.mp4" type="video/mp4">
       </video>
+<!--
   </div>
 <div class ="row">  <img src='testLogo.svg'></img> </row>
       Title
 
+  </div> -->
+      <!-- Title -->
+
+
   </div>
-  <div class="row">
+  <!-- <div class="row">
 
     <img id="stage" src="img/screen.png" alt="stage">
 
-      </div>
+      </div> -->
 
 <!-- Seats in theater
 -->
@@ -194,6 +199,7 @@
           <div class="form-group">
             <input type="email" id="inputEmail" class="form-control" placeholder="Email">
           </div>
+
             <button id="inputButton" type="button" class="btn btn-default">Reserve Seat</button>
 
 
@@ -209,7 +215,26 @@
                           <p>Confirmed your reservation!!!</p>
                         </div>
 
-                      </div>
+            <button id="inputButton" type="button" class="btn btn-default" data-toggle="modal" data-target=".modal">Reserve Seat</button>
+
+            <div class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                      <p id="resMessage"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+
+
 
         </form>
     </div>

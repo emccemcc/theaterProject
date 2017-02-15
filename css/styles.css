@@ -37,7 +37,30 @@ img{
   background-color: red;
   border: 1px solid black;
 }
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
 
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#resMessage{
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+}
 
 
 /* credit for getting screen to work goes to Luka Čavka */
@@ -64,6 +87,7 @@ img{
         -ms-transform: translate(-50%, -50%);
 	    transform: translate(-50%, -50%);
 }
+<<<<<<< HEAD
 
 /* The Modal (background) */
 .modal {
@@ -104,3 +128,5 @@ img{
     text-decoration: none;
     cursor: pointer;
 }
+=======
+>>>>>>> 0ab5df8fb830aac37a764343219733822f4ecec0
