@@ -5,27 +5,26 @@ var reservations=[];
 var inputName;
 var inputEmail;
 //Eric test array
-var inputSeat;
+var inputSeat = [];
 
 class Reservation {
-  constructor(name, email){
+  constructor(name, email,seat){
     this.name = name;
     this.email = email;
-    // this.seat = seat;
+    this.seat = seat;
   }
 }
 $('#inputButton').on('click', function(){
   inputName = $('#inputName').val();
   inputEmail = $('#inputEmail').val();
-/*
-  inputSeat = if ($('.seat').hasClass('clicked')){
-    $('.seat').hasClass('clicked').toString;
-  }  )
-*/
-  var newRes = new Reservation(inputName, inputEmail);
+  inputSeat = $('.clicked').prop('id');
+
+
+  var newRes = new Reservation(inputName, inputEmail, inputSeat);
   reservations.push(newRes);
   console.log(reservations);
   console.log(newRes);
+  console.log(inputSeat);
 })
 
 $('.seat').hover(function() {
@@ -38,7 +37,7 @@ function(){
 });
 
 $('.seat').click('on', function(){
-    $(this).toggleClass('clicked')
+    $(this).toggleClass('clicked');
 });
 
 //work on storage of seat
