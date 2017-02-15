@@ -12,7 +12,7 @@
 }
 
 .clicked {
-  background-color:green;
+  background-color: green;
   border: 1px solid black;
 }
 .row {
@@ -20,6 +20,13 @@
   margin-bottom: 15px;
   text-align: center;
 }
+.form-control{
+  text-align: center;
+  }
+#inputButton{
+  text-align: center;
+  }
+
 .taken {
   background-color: red;
   border: 1px solid black;
