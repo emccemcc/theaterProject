@@ -1,4 +1,6 @@
 .seat {
   background-color: pink;
   border: 1px solid black;
+  height: 175px;
+  width: 175px;
 }

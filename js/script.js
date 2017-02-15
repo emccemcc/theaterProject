@@ -1,5 +1,6 @@
 $(function(){
 
+$('[data-toggle="popover"]').popover()
 
 var reservations=[];
 var inputName;
@@ -13,6 +14,8 @@ class Reservation {
     // this.seat = seat;
   }
 }
+
+
 $('#inputButton').on('click', function(){
   inputName = $('#inputName').val();
   inputEmail = $('#inputEmail').val();
@@ -21,4 +24,6 @@ $('#inputButton').on('click', function(){
   console.log(reservations);
   console.log(newRes);
 })
+
+
 });
