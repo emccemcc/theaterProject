@@ -68,6 +68,14 @@ function(){
   $( this ).fadeTo("fast",1, function(){});
 });
 
+$('.taken').on('click', function(reservations, value) {
+  for (var i=0, iLen=reservations.length; i<iLen; i++) {
+    if (reservations[i].seat == (this.attr('id'))){
+      console.log(reservations[i]);
+    };
+  };
+});
+
 
 });
 
