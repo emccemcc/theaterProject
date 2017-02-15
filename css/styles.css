@@ -1,5 +1,5 @@
 .seat {
-  background-color: pink;
+  background-color: #081954;
   margin-left: 11px;
   display: inline-block;
   padding: 2%;
@@ -9,6 +9,7 @@
   font-weight: bold;
   font-size: 18px;
   border: 1px solid black;
+  box-shadow: 3px 3px 5px #000
 }
 
 .clicked {
@@ -81,4 +82,7 @@
        -moz-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
 	    transform: translate(-50%, -50%);
+}
+div span {
+  color: white;
 }
