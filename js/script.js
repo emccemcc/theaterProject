@@ -46,6 +46,19 @@ $('#inputButton').on('click', function(){
   console.log(newRes);
   console.log(inputSeat);
 
+// Pull value from array of reservations based on reserved seat that is clicked
+
+    $('.seat').on('click', function() {
+        if (this.className.indexOf('taken') > -1) {
+            //console.log($(this).attr('id'));
+            for (var i = 0; i < reservations.length; i++) {
+                if (reservations[i].seat === ($(this).attr('id'))) {
+                    var checkedSeat = reservations[i];
+                    $(this).html(
+                      "<span>"+checkedSeat.name+"</span>"
+                    )}}}});
+
+
 //Clearing values from array and from screen
 inputSeat = [];
 $('#inputName').val('');
