@@ -39,7 +39,7 @@ $('#seatName').val(inputSeat);
 $('#inputButton').on('click', function(){
   inputName = $('#inputName').val();
   inputEmail = $('#inputEmail').val();
-  inputSeat = inputSeat.toString().toUpperCase;
+  inputSeat = inputSeat.toString();
   //inputSeat = $('.clicked').prop('id');
 
   var newRes = new Reservation(inputName, inputEmail, inputSeat);
