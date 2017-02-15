@@ -22,7 +22,8 @@ $('.seat').click('on', function(){
   //change color
     $(this).toggleClass('clicked');
     //add if not already in the array and disable adding if already taken
-if(inputSeat.indexOf(seatNumber) === -1 && $(this).attr('class') == 'seat clicked'){
+if(inputSeat.indexOf(seatNumber) === -1 //&& $(this).attr('class') == 'seat clicked'
+){
   inputSeat.push(seatNumber);
 }
   //remove if already in the array
@@ -68,14 +69,21 @@ function(){
   $( this ).fadeTo("fast",1, function(){});
 });
 
-$('.taken').on('click', function(reservations, value) {
+
+// Pull value from array of reservations based on reserved seat that is clicked
+
+$('.seat').on('click', function(){
+  if (this.className.indexOf('taken') > -1){
+  //console.log($(this).attr('id'));
   for (var i=0, iLen=reservations.length; i<iLen; i++) {
     if (reservations[i].seat == (this.attr('id'))){
-      console.log(reservations[i]);
+      var checkedSeat = reservations[i];
     };
   };
+}else{
+  console.log("not taken");
+};
 });
-
 
 });
 
