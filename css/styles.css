@@ -10,6 +10,11 @@
   font-size: 18px;
   border: 1px solid black;
 }
+img{
+  width:400px;
+  height:200px;
+  
+}
 
 .clicked {
   background-color: green;
@@ -65,10 +70,10 @@
     display: none; /*Hidden by default */
     position: absolute; /* Stay in place*/
     z-index: 1; /*Sit on top*/
-    top:50%;
-    left:500%;
-    margin-top: -50px;
-    margin-left:-100px;
+    top:0;
+    left:0;
+    margin-top: 0;
+    margin-left:0;
   width: 200px; /*Full width*/
   height: 100px;/* Full height */
   text-align:center;
