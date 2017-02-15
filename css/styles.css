@@ -1,8 +1,7 @@
 .seat {
   background-color: pink;
   margin-left: 11px;
-  width: 5%;
-  display: inline-block;
+    display: inline-block;
   padding: 2%;
   border-radius: 10px;
   text-align: center;
