@@ -1,5 +1,6 @@
 $(function(){
 
+$('[data-toggle="popover"]').popover()
 
 var reservations=[];
 var inputName;
@@ -21,7 +22,8 @@ $('.seat').click('on', function(){
   //change color
     $(this).toggleClass('clicked');
     //add if not already in the array and disable adding if already taken
-if(inputSeat.indexOf(seatNumber) === -1 && $(this).attr('class') == 'seat clicked'){
+if(inputSeat.indexOf(seatNumber) === -1 //&& $(this).attr('class') == 'seat clicked'
+){
   inputSeat.push(seatNumber);
 }
   //remove if already in the array
@@ -32,7 +34,7 @@ if(inputSeat.indexOf(seatNumber) === -1 && $(this).attr('class') == 'seat clicke
   }); };
 $('#seatName').val(inputSeat);
 //testing to see that it comes out
-console.log(inputSeat);
+//console.log(inputSeat);
 });
 
 $('#inputButton').on('click', function(){
@@ -41,13 +43,12 @@ $('#inputButton').on('click', function(){
   inputSeat = inputSeat.toString();
   //inputSeat = $('.clicked').prop('id');
 
-
   var newRes = new Reservation(inputName, inputEmail, inputSeat);
   reservations.push(newRes);
 //if id is included in inputSeat then add class of taken
   console.log(reservations);
-  console.log(newRes);
-  console.log(inputSeat);
+  //console.log(newRes);
+  //console.log(inputSeat);
 
 //Clearing values from array and from screen
 inputSeat = [];
@@ -56,8 +57,6 @@ $('#inputEmail').val('');
 $('#seatName').val('');
 //changing class of the taken seats
 $('.clicked').removeClass('clicked').addClass('taken');
-
-
 
 });
 
@@ -71,6 +70,25 @@ function(){
 });
 
 
+// Pull value from array of reservations based on reserved seat that is clicked
+
+$('.seat').on('click', function(){
+  if (this.className.indexOf('taken') > -1){
+  //console.log($(this).attr('id'));
+  for (var i=0; i<reservations.length; i++) {
+    if (reservations[i].seat === ($(this).attr('id'))){
+      var checkedSeat = reservations[i];
+      };
+  };
+
+  }else{
+    console.log("not taken");
+    };
+
+    console.log(checkedSeat);
+});
+
+});
 
 //work on storage of seat
 // now that seats are selected how to funnel them o an array
@@ -78,7 +96,3 @@ function(){
 
 
 //Div click
-
-
-
-});

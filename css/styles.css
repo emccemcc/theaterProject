@@ -9,10 +9,12 @@
   font-weight: bold;
   font-size: 18px;
   border: 1px solid black;
+  height: 175px;
+  width: 175px;
 }
 
 .clicked {
-  background-color: green;
+  background-color:green;
   border: 1px solid black;
 }
 .row {
