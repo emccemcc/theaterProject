@@ -75,14 +75,17 @@ function(){
 $('.seat').on('click', function(){
   if (this.className.indexOf('taken') > -1){
   //console.log($(this).attr('id'));
-  for (var i=0, iLen=reservations.length; i<iLen; i++) {
-    if (reservations[i].seat == (this.attr('id'))){
+  for (var i=0; i<reservations.length; i++) {
+    if (reservations[i].seat === ($(this).attr('id'))){
       var checkedSeat = reservations[i];
-    };
+      };
   };
-}else{
-  console.log("not taken");
-};
+
+  }else{
+    console.log("not taken");
+    };
+
+    console.log(checkedSeat);
 });
 
 });
