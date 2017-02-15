@@ -38,7 +38,7 @@ console.log(inputSeat);
 $('#inputButton').on('click', function(){
   inputName = $('#inputName').val();
   inputEmail = $('#inputEmail').val();
-  inputSeat = inputSeat;
+  inputSeat = inputSeat.toString();
   //inputSeat = $('.clicked').prop('id');
 
 
