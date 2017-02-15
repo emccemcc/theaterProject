@@ -55,9 +55,9 @@ $('#inputButton').on('click', function(){
                     var checkedSeat = reservations[i];
                     $(this).html(
                       "<span>"+checkedSeat.name+"</span>"
-                    );
+                    )}}}});
 
-                    
+
 //Clearing values from array and from screen
 inputSeat = [];
 $('#inputName').val('');
