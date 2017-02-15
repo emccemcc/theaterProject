@@ -30,11 +30,7 @@ $('.seat').click('on', function(){
           });
           };
 
-
           $('#seatName').val(inputSeat);
-//testing to see that it comes out
-          console.log(inputSeat);
-
 
 });
 
@@ -50,6 +46,7 @@ $('#inputButton').on('click', function(){
     }else{
       $('.modal-title').text('Reservation Confirmed');
       $('#resMessage').text('Enjoy the show, '+inputName+'!');
+      $('.clicked').removeClass('clicked').addClass('taken');
   };
 
 
@@ -61,6 +58,8 @@ $('#inputButton').on('click', function(){
 
   var newRes = new Reservation(inputName, inputEmail, inputSeat);
   reservations.push(newRes);
+
+  console.log(reservations);
 // if id is included in inputSeat then add class of taken
 
 //Clearing values from array and from screen
@@ -68,33 +67,18 @@ inputSeat = [];
 $('#inputName').val('');
 $('#inputEmail').val('');
 $('#seatName').val('');
-//changing class of the taken seats
-$('.clicked').removeClass('clicked').addClass('taken');
+
 
 
 });
 
-// Pull value from array of reservations based on reserved seat that is clicked
-
-    // $('.seat').on('click', function() {
-    //     if (this.className.indexOf('taken') > -1) {
-    //         for (var i = 0; i < reservations.length; i++) {
-    //             if (reservations[i].seat === ($(this).attr('id'))) {
-    //                 var checkedSeat = reservations[i];
-    //                 $(this).html("<span>"+checkedSeat.name+"</span>");
-    //               };
-    //             };
-    //           };
-    //   });
-
-
 $('.seat').hover(function() {
   //add opacity
-  $( this ).fadeTo("fast",.25, function(){});
+  $( this ).fadeTo(50,.85, function(){});
 },
 function(){
   //remove opacity
-  $( this ).fadeTo("fast",1, function(){});
+  $( this ).fadeTo(50,1, function(){});
 });
 //work on storage of seat
 //now that seats are selected how to funnel them o an array
