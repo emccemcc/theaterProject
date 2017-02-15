@@ -67,7 +67,7 @@ inputSeat = [];
 $('#inputName').val('');
 $('#inputEmail').val('');
 $('#seatName').val('');
-
+$('.clicked').removeClass('clicked')
 
 
 });
