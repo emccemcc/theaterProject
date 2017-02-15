@@ -11,10 +11,15 @@
   border: 1px solid black;
 }
 img{
-  width:400px;
-  height:200px;
-  
+  height: 50%;
+  width: 50%;
 }
+
+#title{
+  padding-bottom: -50%;
+}
+
+
 
 .clicked {
   background-color: green;
@@ -87,7 +92,7 @@ img{
         -ms-transform: translate(-50%, -50%);
 	    transform: translate(-50%, -50%);
 }
-<<<<<<< HEAD
+
 
 /* The Modal (background) */
 .modal {
@@ -128,5 +133,3 @@ img{
     text-decoration: none;
     cursor: pointer;
 }
-=======
->>>>>>> 0ab5df8fb830aac37a764343219733822f4ecec0
