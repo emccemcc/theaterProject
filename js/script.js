@@ -1,7 +1,7 @@
 $(function(){
 var reservations=[];
-var inputName;
-var inputEmail;
+var inputName='';
+var inputEmail='';
 //Eric test array
 var inputSeat = [];
 class Reservation {
@@ -42,22 +42,25 @@ $('#inputButton').on('click', function(){
   inputName = $('#inputName').val();
   inputEmail = $('#inputEmail').val();
   inputSeat = inputSeat.toString();
-  //inputSeat = $('.clicked').prop('id');
+
+  if (inputName=="" || inputEmail=="" || inputSeat.length==0){
+    $('.modal-title').text('Error');
+    $('#resMessage').text('Please enter a selection and fill out the form below.');
+    }else{
+      $('.modal-title').text('Reservation Confirmed');
+      $('#resMessage').text('Enjoy the show, '+inputName+'!');
+  };
+
 
 // Find the html element that has an ID equal to the value in inputSeat, and change its popover values to show its object content
 
 
 
 
+
   var newRes = new Reservation(inputName, inputEmail, inputSeat);
   reservations.push(newRes);
-//if id is included in inputSeat then add class of taken
-
-
-  // console.log(reservations);
-  // console.log(newRes);
-  // console.log(inputSeat);
-
+// if id is included in inputSeat then add class of taken
 
 //Clearing values from array and from screen
 inputSeat = [];

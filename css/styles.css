@@ -22,6 +22,7 @@
 }
 .form-control{
   text-align: center;
+  display:block;
   }
 #inputButton{
   text-align: center;
@@ -30,13 +31,32 @@
 .taken {
   background-color: red;
   border: 1px solid black;
-
+}
+.modal {
+  text-align: center;
+  padding: 0!important;
 }
 
-.navbar-form{
-  object-position:center;
-
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
 }
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#resMessage{
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
 
 /* credit for getting screen to work goes to Luka Čavka */
 .fullscreen-bg {
