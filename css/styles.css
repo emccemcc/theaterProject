@@ -1,7 +1,7 @@
 .seat {
   background-color: pink;
   margin-left: 11px;
-    display: inline-block;
+  display: inline-block;
   padding: 2%;
   border-radius: 10px;
   text-align: center;
@@ -9,8 +9,6 @@
   font-weight: bold;
   font-size: 18px;
   border: 1px solid black;
-  height: 175px;
-  width: 175px;
 }
 
 .clicked {

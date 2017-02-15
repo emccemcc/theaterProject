@@ -74,7 +74,7 @@ $(function(){
         });
 
 
-    // Pull value from array of reservations based on reserved seat that is clicked
+// Pull value from array of reservations based on reserved seat that is clicked
 
     $('.seat').on('click', function() {
         if (this.className.indexOf('taken') > -1) {
@@ -82,11 +82,9 @@ $(function(){
             for (var i = 0; i < reservations.length; i++) {
                 if (reservations[i].seat === ($(this).attr('id'))) {
                     var checkedSeat = reservations[i];
-                    $(this).attr({
-                        'data-toggle': "popover",
-                        'title': "Popover Header",
-                        'data-content': "Some content inside the popover"
-                    });
+                    $(this).html(
+                      "<span>"+checkedSeat.name+"</span>"
+                    );
 
                 };
             };
