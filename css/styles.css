@@ -27,6 +27,12 @@
   border: 1px solid black;
 
 }
+
+.navbar-form{
+  object-position:center;
+
+}
+
 /* credit for getting screen to work goes to Luka Čavka */
 .fullscreen-bg {
     position: fixed;
