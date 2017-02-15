@@ -20,8 +20,8 @@ $('.seat').click('on', function(){
   var seatNumber = $(this).attr('id');
   //change color
     $(this).toggleClass('clicked');
-    //add if not already in the array
-if(inputSeat.indexOf(seatNumber) === -1){
+    //add if not already in the array and disable adding if already taken
+if(inputSeat.indexOf(seatNumber) === -1 && $(this).attr('class') == 'seat clicked'){
   inputSeat.push(seatNumber);
 }
   //remove if already in the array
@@ -30,7 +30,7 @@ if(inputSeat.indexOf(seatNumber) === -1){
     inputSeat = jQuery.grep(inputSeat, function(a) {
       return a !== seatNumber;
   }); };
-  
+
 //testing to see that it comes out
 console.log(inputSeat);
 });
