@@ -10,8 +10,19 @@
 </head>
 <body>
 <div class="container">
-  <div class="row">
+  <!-- Eric adding background video -->
+<!--  <div class="fullscreen-bg">
+      <video loop muted autoplay class="fullscreen-bg__video">
+          <source src="blueMotion.mp4" type="video/mp4">
+      </video>
+  </div> -->
 
+  <!-- commenting out test
+  <div class="backgroundMovie">
+    <video loop muted autoplay 	<source src="blueMotion.mp4" type="video/mp4"> </video>
+   </div>
+  <div class="row">
+  -->
       Title
 
   </div>
@@ -27,10 +38,9 @@
     <div class="container">
       <div class="row">
 
-          <div id="1A" class="seat">
+          <div id="1A" class="seat" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">
           <span>1A</span>
           </div>
-
 
           <div id="1B" class="seat">
             <span>1B</span>
@@ -172,8 +182,14 @@
   </div>
 <!-- Form content-->
   <div class="container">
+<<<<<<< HEAD
     <div class="row1">
         <form class="navbar-form navbar-left" role="search">
+=======
+    <div class="row">
+      <div class="col-md-12">
+        <form class="navbar-form " role="search">
+>>>>>>> b51ce90d4fa136183a3c268d08190c3d6a9f9648
           <div class="form-group">
             <input type="text" id="seatName" class="form-control" placeholder="Seat" disabled="disabled">
           </div>
@@ -192,5 +208,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="js/script.js"></script>
   <script src="js/bootstrap.js"></script>
+  <!-- voice jazz added but nto working for the moment-->
+  <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
 </body>
 </html>
