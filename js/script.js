@@ -30,7 +30,7 @@ if(inputSeat.indexOf(seatNumber) === -1 && $(this).attr('class') == 'seat clicke
     inputSeat = jQuery.grep(inputSeat, function(a) {
       return a !== seatNumber;
   }); };
-
+$('#seatName').val(inputSeat);
 //testing to see that it comes out
 console.log(inputSeat);
 });
@@ -49,11 +49,14 @@ $('#inputButton').on('click', function(){
   console.log(newRes);
   console.log(inputSeat);
 
-//Removing it
+//Clearing values from array and from screen
 inputSeat = [];
-//changing class
+$('#inputName').val('');
+$('#inputEmail').val('');
+$('#seatName').val('');
+//changing class of the taken seats
 $('.clicked').removeClass('clicked').addClass('taken');
-//Prevent from selection
+
 
 
 });
