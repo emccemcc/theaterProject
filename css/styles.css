@@ -7,3 +7,9 @@
   background-color: green;
   border: 1px solid black;
 }
+
+.taken {
+  background-color: red;
+  border: 1px solid black;
+  
+}
