@@ -113,6 +113,7 @@ $(function() {
             //remove opacity
             $(this).fadeTo(50, 1);
         });
+        //Adding voice welcome through open api
         responsiveVoice.speak("Hello, and welcome to The Fancy Movie club.", "UK English Male");
 
 });
