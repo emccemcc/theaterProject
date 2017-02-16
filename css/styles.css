@@ -1,6 +1,6 @@
 .seat {
   background-color: #081954;
-  margin-left: 11px;
+  margin: 6px;
   display: inline-block;
   padding: 2%;
   border-radius: 10px;
@@ -9,19 +9,20 @@
   font-weight: bold;
   font-size: 18px;
   border: 1px solid black;
-  box-shadow: 3px 3px 5px #000
+  box-shadsow: 3px 3px 5px #000
+}
+
+p{
+  text-align: center;
 }
 img{
   height: 23%;
   width: 23%;
-
 }
 
 #title{
   padding-bottom: -50%;
 }
-
-
 
 .clicked {
   background-color: green;
