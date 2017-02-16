@@ -1,7 +1,6 @@
 .seat {
   background-color: #081954;
   margin: 6px;
-  margin-top: 3px;
   display: inline-block;
   padding: 2%;
   border-radius: 10px;
@@ -13,9 +12,6 @@
   box-shadsow: 3px 3px 5px #000;
 }
 
-p{
-  text-align: center;
-}
 img{
   height: 21%;
   width: 21%;
@@ -46,6 +42,8 @@ img{
   background-color: red;
   border: 1px solid black;
 }
+
+/* Makes the modal display in the center of the screen*/
 .modal {
   text-align: center;
   padding: 0!important;

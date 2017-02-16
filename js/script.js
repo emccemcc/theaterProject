@@ -54,12 +54,14 @@ $('[data-toggle="popover"]').popover();
     if (inputName=="" || inputEmail=="" || inputSeat.length==0){
       $('.modal-title').text('Error');
       $('#resMessage').text('Please enter a selection and fill out the form below.');
+      //Remove values from all inputs
       $('.clicked').removeClass('clicked');
       inputSeat = [];
       $('#inputName').val('');
       $('#inputEmail').val('');
       $('#seatName').val('');
     } else {
+      //Create new Reservation object, and push that to array of reservations
       var newRes = new Reservation(inputName, inputEmail, inputSeat);
       reservations.push(newRes);
 
@@ -85,7 +87,7 @@ $('[data-toggle="popover"]').popover();
     };
   });
 
-// Add hover functionality and edit title for seats. Displays either "Available" or "Reserved for 'name'"
+// Add hover functionality and edit title for seats. Displays either "Available", "Selected" or "Reserved for 'name'"
 
   $('.seat').hover(
     function() {
