@@ -1,6 +1,8 @@
+// ©2017 Eric McCormick, Priyanka Shaji, Adam Mason
+
 $(function(){
 
-//Allow popover to work
+//Allow popovers to load
 $('[data-toggle="popover"]').popover();
 
 //Set global variables
@@ -24,10 +26,6 @@ $('[data-toggle="popover"]').popover();
     //create a new variable to push to inputSeat
     var seatNumber = $(this).attr('id');
     //change color
-
-//Need if statement here
-
-    // ($(this).className === 'clicked')
     $(this).toggleClass('clicked');
     //add if not already in the array and disable adding if already taken
     if(inputSeat.indexOf(seatNumber) === -1 && $(this).attr('class') == 'seat clicked'){
@@ -52,7 +50,7 @@ $('[data-toggle="popover"]').popover();
     inputEmail = $('#inputEmail').val();
     inputSeat = inputSeat.toString();
 
-    //Verify that all required data has been entered. If not, kick back an error message. If so, display a reservation conformation screen.
+    //Verify that all required data has been entered. If not, kick back an error message. If so, display a reservation confirmation screen.
     if (inputName=="" || inputEmail=="" || inputSeat.length==0){
       $('.modal-title').text('Error');
       $('#resMessage').text('Please enter a selection and fill out the form below.');
@@ -60,13 +58,7 @@ $('[data-toggle="popover"]').popover();
       var newRes = new Reservation(inputName, inputEmail, inputSeat);
       reservations.push(newRes);
 
-      //Clear values from temp array and from form inputs
-      inputSeat = [];
-      $('#inputName').val('');
-      $('#inputEmail').val('');
-      $('#seatName').val('');
-
-      //Add popover showing reserved information
+      //Add popover data to reserved seat div showing reserved information
       // $('.clicked').attr({
         // 'title':'',
         // 'data-toggle':'popover',
@@ -75,6 +67,12 @@ $('[data-toggle="popover"]').popover();
       //   'data-original-title':''
       // });
 
+
+      //Clear values from temp array and from form inputs, then display confirmation
+      inputSeat = [];
+      $('#inputName').val('');
+      $('#inputEmail').val('');
+      $('#seatName').val('');
       $('.modal-title').text('Reservation Confirmed');
       $('#resMessage').text('Enjoy the show, '+inputName+'!');
       //Remove the 'clicked' class, and add class 'taken'
@@ -88,6 +86,7 @@ $('[data-toggle="popover"]').popover();
     function() {
     //add opacity
       $( this ).fadeTo(50,.85);
+      //Verify if seat has been reserved, and display reserved tooltip
       if (this.className.indexOf('taken') > -1) {
           for (var i = 0; i < reservations.length; i++) {
               if (reservations[i].seat.indexOf($(this).attr('id')) >= 0) {
@@ -95,6 +94,7 @@ $('[data-toggle="popover"]').popover();
                   $(this).attr('title',"Reserved for "+checkedSeat.name);
               }
           }
+      //If not reserved, display either Selected or Available
       } else if  (this.className.indexOf('clicked') > -1) {
         $(this).attr('title',"Selected");
       } else {
