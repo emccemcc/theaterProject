@@ -66,6 +66,10 @@ $(function() {
             reservations.push(newRes);
             console.log(reservations);
 
+            //On a successful reservation, remove displayed seat name, and replace with glyphicon to represent a taken seat
+            $('.clicked span').text('');
+            $('.clicked span').addClass('glyphicon glyphicon-user');
+
             //Add popover data to reserved seat div showing reserved information
             // $('.clicked').attr({
             // 'title':'',
