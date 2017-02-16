@@ -64,6 +64,7 @@ $(function() {
             //Create new Reservation object, and push that to array of reservations
             var newRes = new Reservation(inputName, inputEmail, inputSeat);
             reservations.push(newRes);
+            console.log(reservations);
 
             //Add popover data to reserved seat div showing reserved information
             // $('.clicked').attr({
