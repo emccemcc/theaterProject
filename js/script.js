@@ -72,14 +72,30 @@ $('.clicked').removeClass('clicked')
 
 });
 
-$('.seat').hover(function() {
+$('.seat').hover(
+  function() {
   //add opacity
-  $( this ).fadeTo(50,.85, function(){});
-},
-function(){
-  //remove opacity
-  $( this ).fadeTo(50,1, function(){});
-});
+    $( this ).fadeTo("fast",.25);
+    if (this.className.indexOf('taken') > -1) {
+        //console.log($(this).attr('id'));
+        for (var i = 0; i < reservations.length; i++) {
+            if (reservations[i].seat.indexOf($(this).attr('id')) >= 0) {
+                var checkedSeat = reservations[i];
+                $(this).attr('title',"Reserved for "+checkedSeat.name);
+            }
+        }
+    } else if  (this.className.indexOf('clicked') > -1) {
+      $(this).attr('title',"Selected");
+    } else {
+      $(this).attr('title',"Available");
+    }
+
+  },
+  function(){
+    //remove opacity
+    $( this ).fadeTo("fast",1);
+  });
+
 //work on storage of seat
 //now that seats are selected how to funnel them o an array
 //how to put in selector
