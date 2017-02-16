@@ -113,4 +113,6 @@ $(function() {
             //remove opacity
             $(this).fadeTo(50, 1);
         });
+        responsiveVoice.speak("Hello, and welcome to The Fancy Movie club.", "UK English Male");
+
 });
