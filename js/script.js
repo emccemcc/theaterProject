@@ -94,10 +94,10 @@ $('[data-toggle="popover"]').popover();
       //Verify if seat has been reserved, and display reserved tooltip
       if (this.className.indexOf('taken') > -1) {
           for (var i = 0; i < reservations.length; i++) {
-              if (reservations[i].seat.indexOf($(this).attr('id')) >= 0) {
+              //if (reservations[i].seat.indexOf($(this).attr('id')) >= 0) {
                   var checkedSeat = reservations[i];
                   $(this).attr('title',"Reserved for "+checkedSeat.name);
-              }
+            //  }
           }
       //If not reserved, display either Selected or Available
       } else if  (this.className.indexOf('clicked') > -1) {
