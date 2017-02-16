@@ -54,6 +54,7 @@ $('[data-toggle="popover"]').popover();
     if (inputName=="" || inputEmail=="" || inputSeat.length==0){
       $('.modal-title').text('Error');
       $('#resMessage').text('Please enter a selection and fill out the form below.');
+      $('.clicked').removeClass('clicked');
     } else {
       var newRes = new Reservation(inputName, inputEmail, inputSeat);
       reservations.push(newRes);
