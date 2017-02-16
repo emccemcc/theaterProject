@@ -1,10 +1,15 @@
 $(function(){
 
+//Allow popover to work
+$('[data-toggle="popover"]').popover();
+
+//Set global variables
   var reservations=[];
   var inputName='';
   var inputEmail='';
-  //Eric test array
   var inputSeat = [];
+
+//Constructor Object for created Reservation
   class Reservation {
     constructor(name, email,seat){
       this.name = name;
@@ -13,10 +18,16 @@ $(function(){
     }
   }
 
+//When clicking on a seat to select it, take the seat number (element ID) and add it to a temporary array (inputSeat). Toggle the class to display a green color.
+
   $('.seat').click('on', function(){
     //create a new variable to push to inputSeat
     var seatNumber = $(this).attr('id');
     //change color
+
+//Need if statement here
+
+    // ($(this).className === 'clicked')
     $(this).toggleClass('clicked');
     //add if not already in the array and disable adding if already taken
     if(inputSeat.indexOf(seatNumber) === -1 && $(this).attr('class') == 'seat clicked'){
@@ -29,39 +40,54 @@ $(function(){
         return a !== seatNumber;
       });
     };
-    //assign that selected seats to the seat field in  the screen
+    //assign that selected seats to the seat field in the screen
     $('#seatName').val(inputSeat);
   });
 
+//CLick the button to create a new Reservation object, and add it to the array of created reservations.
 
   $('#inputButton').on('click', function(){
+    //Sets values of form to variables
     inputName = $('#inputName').val();
     inputEmail = $('#inputEmail').val();
     inputSeat = inputSeat.toString();
 
+    //Verify that all required data has been entered. If not, kick back an error message. If so, display a reservation conformation screen.
     if (inputName=="" || inputEmail=="" || inputSeat.length==0){
       $('.modal-title').text('Error');
       $('#resMessage').text('Please enter a selection and fill out the form below.');
     } else {
       var newRes = new Reservation(inputName, inputEmail, inputSeat);
       reservations.push(newRes);
-      //Clearing values from array and from screen
+
+      //Clear values from temp array and from form inputs
       inputSeat = [];
       $('#inputName').val('');
       $('#inputEmail').val('');
       $('#seatName').val('');
+
+      //Add popover showing reserved information
+      // $('.clicked').attr({
+        // 'title':'',
+        // 'data-toggle':'popover',
+        // 'data-trigger':'hover',
+        // 'data-content':'Reserved for '+inputName,
+      //   'data-original-title':''
+      // });
+
       $('.modal-title').text('Reservation Confirmed');
       $('#resMessage').text('Enjoy the show, '+inputName+'!');
+      //Remove the 'clicked' class, and add class 'taken'
       $('.clicked').removeClass('clicked').addClass('taken');
     };
-    // Find the html element that has an ID equal to the value in inputSeat, and change its popover values to show its object content
-    // if id is included in inputSeat then add class of taken
   });
+
+// Add hover functionality and edit title for seats. Displays either "Available" or "Reserved for 'name'"
 
   $('.seat').hover(
     function() {
     //add opacity
-      $( this ).fadeTo("fast",.25);
+      $( this ).fadeTo(50,.85);
       if (this.className.indexOf('taken') > -1) {
           for (var i = 0; i < reservations.length; i++) {
               if (reservations[i].seat.indexOf($(this).attr('id')) >= 0) {
@@ -77,6 +103,6 @@ $(function(){
     },
     function(){
       //remove opacity
-      $( this ).fadeTo("fast",1);
+      $( this ).fadeTo(50,1);
     });
 });
